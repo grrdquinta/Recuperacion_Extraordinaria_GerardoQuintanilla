@@ -18,8 +18,8 @@ const patientSchema = new Schema({
     required: [true, 'La contraseña es obligatoria'],
     minlength: [8, 'La contraseña debe tener al menos 8 caracteres'],
     validate: {
-        validator: function(password) {
-            return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(password);
+        validator: function(contrasena) {
+            return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(contrasena);
         },
         message: 'La contraseña debe contener al menos una mayúscula, una minúscula, un número y un carácter especial'
     }

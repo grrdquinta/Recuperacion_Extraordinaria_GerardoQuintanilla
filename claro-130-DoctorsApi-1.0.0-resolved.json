@@ -1,0 +1,1484 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Simple Inventory API",
+    "description": "This is a simple API",
+    "contact": {
+      "email": "you@your-company.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/claro-130/DoctorsApi/1.0.0",
+      "description": "SwaggerHub API Auto Mocking"
+    }
+  ],
+  "tags": [
+    {
+      "name": "admins",
+      "description": "Secured Admin-only calls"
+    },
+    {
+      "name": "developers",
+      "description": "Operations available to regular developers"
+    }
+  ],
+  "paths": {
+    "/api/registrarPacientes": {
+      "post": {
+        "tags": [],
+        "summary": "Your POST endpoint",
+        "operationId": "post-api-registrarPacientes",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/api_registrarPacientes_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/iniciarSesion": {
+      "post": {
+        "tags": [],
+        "summary": "Your POST endpoint",
+        "operationId": "post-api-iniciarSesion",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/api_iniciarSesion_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/cerrarSesion": {
+      "post": {
+        "tags": [],
+        "summary": "Your POST endpoint",
+        "operationId": "post-api-cerrarSesion",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/recuperarContrasena/solicitarCodigo": {
+      "post": {
+        "tags": [],
+        "summary": "Your POST endpoint",
+        "operationId": "post-api-recuperarContrasena-solicitarCodigo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/recuperarContrasena_solicitarCodigo_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/recuperarContrasena/verificarCodigo": {
+      "post": {
+        "tags": [],
+        "summary": "Your POST endpoint",
+        "operationId": "post-api-recuperarContrasena-verificarCodigo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/recuperarContrasena_verificarCodigo_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/recuperarContrasena/nuevaContrasena": {
+      "post": {
+        "tags": [],
+        "summary": "Your POST endpoint",
+        "operationId": "post-api-recuperarContrasena-nuevaContrasena",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/recuperarContrasena_nuevaContrasena_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/pacientes": {
+      "get": {
+        "tags": [],
+        "summary": "Your GET endpoint",
+        "operationId": "get-api-pacientes",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [],
+        "summary": "Your POST endpoint",
+        "operationId": "post-api-pacientes",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/api_pacientes_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/pacientes/:id": {
+      "get": {
+        "tags": [],
+        "summary": "Your GET endpoint",
+        "operationId": "get-api-pacientes-:id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [],
+        "summary": "Your PUT endpoint",
+        "operationId": "put-api-pacientes-:id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pacientes_id_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "summary": "Your DELETE endpoint",
+        "operationId": "delete-api-pacientes-:id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/doctores": {
+      "get": {
+        "tags": [],
+        "summary": "Your GET endpoint",
+        "operationId": "get-api-doctores",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [],
+        "summary": "Your POST endpoint",
+        "operationId": "post-api-doctores",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/api_doctores_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/doctores/:id": {
+      "get": {
+        "tags": [],
+        "summary": "Your GET endpoint",
+        "operationId": "get-api-doctores-api",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [],
+        "summary": "Your PUT endpoint",
+        "operationId": "put-api-doctores-:id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "summary": "Your DELETE endpoint",
+        "operationId": "delete-api-doctores-:id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/citas": {
+      "get": {
+        "tags": [],
+        "summary": "Your GET endpoint",
+        "operationId": "get-api-citas",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [],
+        "summary": "Your POST endpoint",
+        "operationId": "post-api-citas",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/api_citas_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/citas/:id": {
+      "get": {
+        "tags": [],
+        "summary": "Your GET endpoint",
+        "operationId": "get-api-citas-:id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [],
+        "summary": "Your PUT endpoint",
+        "operationId": "put-api-citas-:id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "summary": "Your DELETE endpoint",
+        "operationId": "delete-api-citas-:id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/departamentos": {
+      "get": {
+        "tags": [],
+        "summary": "Your GET endpoint",
+        "operationId": "get-api-departamentos",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [],
+        "summary": "Your POST endpoint",
+        "operationId": "post-api-departamentos",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/api_departamentos_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/departamentos/:id": {
+      "get": {
+        "tags": [],
+        "summary": "Your GET endpoint",
+        "operationId": "get-api-departamentos-:id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [],
+        "summary": "Your PUT endpoint",
+        "operationId": "put-api-departamentos-:id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/departamentos_id_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "summary": "Your DELETE endpoint",
+        "operationId": "delete-api-departamentos-:id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/historias": {
+      "get": {
+        "tags": [],
+        "summary": "Your GET endpoint",
+        "operationId": "get-api-historias",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [],
+        "summary": "Your POST endpoint",
+        "operationId": "post-api-historias",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/api_historias_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/historias/:id": {
+      "get": {
+        "tags": [],
+        "summary": "Your GET endpoint",
+        "operationId": "get-api-historias-:id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [],
+        "summary": "Your PUT endpoint",
+        "operationId": "put-api-historias-:id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/historias_id_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "summary": "Your DELETE endpoint",
+        "operationId": "delete-api-historias-:id",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/resenas": {
+      "get": {
+        "tags": [],
+        "summary": "Your GET endpoint",
+        "operationId": "get-api-resenas",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [],
+        "summary": "Your POST endpoint",
+        "operationId": "post-api-resenas",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/api_resenas_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/resenas/:id": {
+      "get": {
+        "tags": [],
+        "summary": "Your GET endpoint",
+        "operationId": "get-api-resenas-:id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [],
+        "summary": "Your PUT endpoint",
+        "operationId": "put-api-resenas-:id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/resenas_id_body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "summary": "Your DELETE endpoint",
+        "operationId": "delete-api-resenas-:id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "api_registrarPacientes_body": {
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "khdvi62pxk7fu"
+            }
+          },
+          "correo": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "wto366yp76rsb"
+            }
+          },
+          "contrasena": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "5ki4ptzuvlatr"
+            }
+          },
+          "FechaNacimiento": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "mamf0xocz9x4e"
+            }
+          },
+          "telefono": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "gj03bk94d50oi"
+            }
+          },
+          "direccion": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "6uxy2brdn7zt9"
+            }
+          }
+        }
+      },
+      "api_iniciarSesion_body": {
+        "type": "object",
+        "properties": {
+          "correo": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "m7373qnm5bo58"
+            }
+          },
+          "contrasena": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "939jy8g63o8f1"
+            }
+          }
+        }
+      },
+      "recuperarContrasena_solicitarCodigo_body": {
+        "type": "object",
+        "properties": {
+          "correo": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "k1dyau6emzq28"
+            }
+          }
+        }
+      },
+      "recuperarContrasena_verificarCodigo_body": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "djwm3h443xkpg"
+            }
+          }
+        }
+      },
+      "recuperarContrasena_nuevaContrasena_body": {
+        "type": "object",
+        "properties": {
+          "newPassword": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "5lpqaaxcyyewd"
+            }
+          }
+        }
+      },
+      "api_pacientes_body": {
+        "required": [
+          "contrasena",
+          "correo",
+          "nombre"
+        ],
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "nx0pdo6epxlee"
+            }
+          },
+          "correo": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "etqotx0dwuq4p"
+            }
+          },
+          "contrasena": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "tb3tdnevclbla"
+            }
+          },
+          "fechaNacimiento": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "gh6nshsyo4s8q"
+            }
+          },
+          "telefono": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "c4rgz5s62calo"
+            }
+          },
+          "direccion": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "7xvdk8ccjqi3r"
+            }
+          },
+          "imageUrl": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "z0msw4pu9m7xy"
+            }
+          }
+        }
+      },
+      "pacientes_id_body": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "gbudwecw9fcje"
+            }
+          },
+          "correo": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "qd0b9sofku4ix"
+            }
+          },
+          "contrasena": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "rmyuqgjnpskuq"
+            }
+          },
+          "fechaNacimiento": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "wog45x0pj8yiw"
+            }
+          },
+          "telefono": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "3z8y1u8cvpi1j"
+            }
+          },
+          "direccion": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "z2coowuze76hu"
+            }
+          },
+          "imageUrl": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "xjzf0a2fxrqo5"
+            }
+          }
+        }
+      },
+      "api_doctores_body": {
+        "required": [
+          "apellido",
+          "contrasena",
+          "correo",
+          "especialidad",
+          "nombre"
+        ],
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "g00at7ukmff4e"
+            }
+          },
+          "apellido": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "c5pd8kwqb42no"
+            }
+          },
+          "especialidad": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "vqz7sb40m4zcw"
+            }
+          },
+          "biografia": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "d0krkrzi9furq"
+            }
+          },
+          "correo": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "6hr9yac941x7z"
+            }
+          },
+          "contrasena": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "5pl8r06zbq2dx"
+            }
+          },
+          "imageUrl": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "tueban4k6sfcd"
+            }
+          }
+        }
+      },
+      "api_citas_body": {
+        "required": [
+          "idDoctor",
+          "idPacient"
+        ],
+        "type": "object",
+        "properties": {
+          "idPacient": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "fqa0ixxlezbzq"
+            }
+          },
+          "idDoctor": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "g3fe8hbxh5it7"
+            }
+          },
+          "fechaCita": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "r6vsu171vyy7s"
+            }
+          },
+          "notas": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "txwcspeu8h8g1"
+            }
+          }
+        }
+      },
+      "api_departamentos_body": {
+        "required": [
+          "nombre"
+        ],
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "wzkduwq5d2q5e"
+            }
+          },
+          "descripcion": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "69xpkqixdwbpf"
+            }
+          }
+        }
+      },
+      "departamentos_id_body": {
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "4mofehr9oknog"
+            }
+          },
+          "descripcion": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "yipa4zn8gb736"
+            }
+          }
+        }
+      },
+      "api_historias_body": {
+        "required": [
+          "diagnostico",
+          "fechaRegistro",
+          "idDoctor",
+          "idPacient"
+        ],
+        "type": "object",
+        "properties": {
+          "idPacient": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "wg6ubtfhk17wl"
+            }
+          },
+          "idDoctor": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "22qer98sjkcn6"
+            }
+          },
+          "diagnostico": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "7tv7pgvbjegxx"
+            }
+          },
+          "tratamiento": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "r3mmu3thxxenz"
+            }
+          },
+          "fechaRegistro": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "jsmh2wln2c5ld"
+            }
+          },
+          "archivos": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "bjcs8ansckakl"
+            }
+          }
+        }
+      },
+      "historias_id_body": {
+        "type": "object",
+        "properties": {
+          "idPacient": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "yxld3vfsfmyi1"
+            }
+          },
+          "idDoctor": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "r79hem5vl0iht"
+            }
+          },
+          "diagnostico": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "shw5yg4desjog"
+            }
+          },
+          "tratamiento": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "31gjcafudkcwz"
+            }
+          },
+          "fechaRegistro": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "adj98hbcsob3q"
+            }
+          },
+          "archivos": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "z1lsetbwuohif"
+            }
+          }
+        }
+      },
+      "api_resenas_body": {
+        "required": [
+          "calificacion",
+          "comentario",
+          "idDoctor",
+          "idPacient"
+        ],
+        "type": "object",
+        "properties": {
+          "idPacient": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "u77q57l389qlv"
+            }
+          },
+          "idDoctor": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "4xq6rromjvzcd"
+            }
+          },
+          "comentario": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "h6qihgxj4onot"
+            }
+          },
+          "calificacion": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "3b60is6w1e526"
+            }
+          }
+        }
+      },
+      "resenas_id_body": {
+        "type": "object",
+        "properties": {
+          "comentario": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "ruibzl92xmktb"
+            }
+          },
+          "calificacion": {
+            "type": "string",
+            "x-stoplight": {
+              "id": "5k02jdgqlaag1"
+            }
+          }
+        }
+      }
+    }
+  }
+}

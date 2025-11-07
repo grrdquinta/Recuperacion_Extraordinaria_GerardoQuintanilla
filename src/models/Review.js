@@ -8,7 +8,7 @@ const reviewSchema = new Schema({
     },
     idDoctor: {
         type: Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'Doctor',
         required: [true, 'El ID del doctor es obligatorio']
     },
     comentario: {

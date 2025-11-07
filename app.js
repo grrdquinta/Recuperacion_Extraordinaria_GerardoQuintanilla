@@ -11,13 +11,13 @@ import { config } from "./src/config.js";
 
 // Importar rutas
 import authRoutes from "./src/routes/authRoutes.js";
-/*import booksRoutes from "./src/routes/booksRoutes.js";
-import authorsRoutes from "./src/routes/authorsRoutes.js";
-import categoriesRoutes from "./src/routes/categoriesRoutes.js";
-import loansRoutes from "./src/routes/loansRoutes.js";
-import reviewsRoutes from "./src/routes/reviewsRoutes.js";
-import clientsRoutes from "./src/routes/clientsRoutes.js";*/
 import bodyParser from "body-parser";
+import patientsRoutes from "./src/routes/patientsRoutes.js";
+import doctorsRoutes from "./src/routes/doctorsRoutes.js";
+import appointmentsRoutes from "./src/routes/appoimentsRoutes.js";
+import departmentsRoutes from "./src/routes/departmentsRoutes.js";
+import historiesRoutes from "./src/routes/historiesRoutes.js";
+import reviewsRoutes from "./src/routes/reviewsRoutes.js";
 
 const app = express();
 
@@ -27,10 +27,10 @@ if (!fs.existsSync('uploads')) {
 }
 
 //Archivo Swagger
-/*const swaggerDocument = JSON.parse(fs.readFileSync(
-    path.resolve("./gerardo-221-BinaesAPI-1.0.0-resolved.json"),
+const swaggerDocument = JSON.parse(fs.readFileSync(
+    path.resolve("./claro-130-DoctorsApi-1.0.0-resolved.json"),
     "utf-8")
-)*/
+)
 
 
 
@@ -67,15 +67,15 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 app.use(cookieParser());
 
 // Documentación Swagger
-//app.use("/api/docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+app.use("/api/docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 // Rutas principales
 app.use("/api", authRoutes);
-/*app.use("/api/books", booksRoutes);
-app.use("/api/authors", authorsRoutes);
-app.use("/api/categories", categoriesRoutes);
-app.use("/api/loans", loansRoutes);
-app.use("/api/reviews", reviewsRoutes);
-app.use("/api/clients", clientsRoutes);*/
+app.use("/api/pacientes", patientsRoutes);
+app.use("/api/doctores", doctorsRoutes);
+app.use("/api/citas", appointmentsRoutes);
+app.use("/api/departamentos", departmentsRoutes);
+app.use("/api/historias", historiesRoutes);
+app.use("/api/resenas", reviewsRoutes); 
 
 export default app;
